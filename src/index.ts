@@ -23,15 +23,15 @@ function similarityScores(
     queryVector: number[],
     queryMagnitude: number,
     topN: number
-  ): [Document, number, any][] {
+  ): any[] {
     const scores: any[] = documents.map((doc) => {
       const dotProduct: number = doc.vector.reduce((sum, val, i) => sum + val * queryVector[i], 0);
       let score: number = cosineSimilarity(dotProduct, doc.vectorMag, queryMagnitude);
       score = normalize(score);
-      return [doc, score];
+      return { ...doc, score };
     });
   
-    scores.sort((a, b) => b[1] - a[1]);
+    scores.sort((a, b) => b.score - a.score);
     return scores.slice(0, topN);
   }
   
