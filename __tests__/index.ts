@@ -8,9 +8,9 @@ describe("VectorCalc Library Tests", () => {
   });
 
   test("Calculate cosine similarity score", () => {
-    const dotProduct: number = 0.2;
-    const magA: number = 0.5;
-    const magB: number = 0.6;
+    const dotProduct = 0.2;
+    const magA = 0.5;
+    const magB = 0.6;
     const similarityScore: number = VectorCalc.cosineSimilarity(
       dotProduct,
       magA,
@@ -20,7 +20,7 @@ describe("VectorCalc Library Tests", () => {
   });
 
   test("Normalize a score", () => {
-    const scoreToNormalize: number = 0.75;
+    const scoreToNormalize = 0.75;
     const normalizedScore: number = VectorCalc.normalize(scoreToNormalize);
     expect(normalizedScore).toBeCloseTo(0.875, 4);
   });
