@@ -1,31 +1,27 @@
-import * as VectorCalc from "../lib/index";
+import * as VectorCalc from '../lib/index';
 
-describe("VectorCalc Library Tests", () => {
-  test("Calculate magnitude of a vector", () => {
+describe('VectorCalc Library Tests', () => {
+  test('Calculate magnitude of a vector', () => {
     const vector: number[] = [0.1, 0.2, 0.3];
     const mag: number = VectorCalc.magnitude(vector);
     expect(mag).toBeCloseTo(0.3742, 4);
   });
 
-  test("Calculate cosine similarity score", () => {
+  test('Calculate cosine similarity score', () => {
     const dotProduct = 0.2;
     const magA = 0.5;
     const magB = 0.6;
-    const similarityScore: number = VectorCalc.cosineSimilarity(
-      dotProduct,
-      magA,
-      magB
-    );
+    const similarityScore: number = VectorCalc.cosineSimilarity(dotProduct, magA, magB);
     expect(similarityScore).toBeCloseTo(0.6667, 4);
   });
 
-  test("Normalize a score", () => {
+  test('Normalize a score', () => {
     const scoreToNormalize = 0.75;
     const normalizedScore: number = VectorCalc.normalize(scoreToNormalize);
     expect(normalizedScore).toBeCloseTo(0.875, 4);
   });
 
-  test("Calculate similarity scores for a list of documents", () => {
+  test('Calculate similarity scores for a list of documents', () => {
     const queryVector: number[] = [0.1, 0.2, 0.3];
     const queryMagnitude: number = VectorCalc.magnitude(queryVector);
 
