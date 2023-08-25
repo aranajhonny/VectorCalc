@@ -1,3 +1,8 @@
+type Document = {
+  vector: number[];
+  vectorMag: number;
+};
+
 function magnitude(vector: number[]): number {
   const mag: number = Math.sqrt(vector.reduce((sum, val) => sum + val * val, 0));
   return mag;
@@ -10,11 +15,6 @@ function cosineSimilarity(dotProduct: number, magA: number, magB: number): numbe
 function normalize(score: number): number {
   return (score + 1) / 2;
 }
-
-type Document = {
-  vector: number[];
-  vectorMag: number;
-};
 
 function similarityScores(
   documents: Document[],
