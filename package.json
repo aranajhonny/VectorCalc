@@ -1,0 +1,21 @@
+{
+  "name": "vectorcalc",
+  "version": "1.0.0",
+  "description": "lightweight JavaScript library for calculating vector magnitudes.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "vector",
+    "magnitude",
+    "calculation",
+    "mathematics",
+    "pinecone"
+  ],
+  "author": "jhonnyjosearana@gmail.com",
+  "license": "Gnu GPL v3",
+  "devDependencies": {
+    "jest": "^29.6.4"
+  }
+}
