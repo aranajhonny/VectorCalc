@@ -18,16 +18,21 @@ function normalize(score: number): number {
 }
 
 function similarityScores(
-  documents: Document[],
-  queryVector: number[],
-  queryMagnitude: number
-): [Document, number, any][] {
-  return documents.map((doc) => {
-    const dotProduct: number = doc.vector.reduce((sum, val, i) => sum + val * queryVector[i], 0);
-    let score: number = cosineSimilarity(dotProduct, doc.vectorMag, queryMagnitude);
-    score = normalize(score);
-    return [doc, score, doc.metadata];
-  });
-}
+    documents: Document[],
+    queryVector: number[],
+    queryMagnitude: number,
+    topN: number
+  ): [Document, number, any][] {
+    const scores: [Document, number, any][] = documents.map((doc) => {
+      const dotProduct: number = doc.vector.reduce((sum, val, i) => sum + val * queryVector[i], 0);
+      let score: number = cosineSimilarity(dotProduct, doc.vectorMag, queryMagnitude);
+      score = normalize(score);
+      return [doc, score, doc.metadata];
+    });
+  
+    scores.sort((a, b) => b[1] - a[1]);
+    return scores.slice(0, topN);
+  }
+  
 
 export { normalize, cosineSimilarity, magnitude, similarityScores, Document };
