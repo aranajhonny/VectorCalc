@@ -6,5 +6,5 @@ VectorCalc is a lightweight JavaScript library that provides essential vector ca
 To use VectorCalc in your JavaScript project, you can install it via npm:
 
 ```bash
-npm install vector-calc
+npm install vectorcalc
 ```
