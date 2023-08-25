@@ -39,7 +39,8 @@ describe('VectorCalc Library Tests', () => {
     const scores: any[] = VectorCalc.similarityScores(
       documents,
       queryVector,
-      queryMagnitude
+      queryMagnitude,
+      2
     );
 
     const expectedScores: any[] = [

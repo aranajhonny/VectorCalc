@@ -1,6 +1,6 @@
 {
   "name": "vectorcalc",
-  "version": "1.0.4",
+  "version": "1.0.6",
   "description": "lightweight JavaScript library for calculating vector magnitudes.",
   "scripts": {
     "build": "rm -rf lib/ && tsc && tsc",
