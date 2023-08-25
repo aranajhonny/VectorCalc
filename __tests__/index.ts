@@ -36,13 +36,13 @@ describe('VectorCalc Library Tests', () => {
       },
     ];
 
-    const scores: [VectorCalc.Document, number][] = VectorCalc.similarityScores(
+    const scores: any[] = VectorCalc.similarityScores(
       documents,
       queryVector,
       queryMagnitude
     );
 
-    const expectedScores: [VectorCalc.Document, number][] = [
+    const expectedScores: any[] = [
       [documents[0], 0.9926],
       [documents[1], 0.988],
     ];

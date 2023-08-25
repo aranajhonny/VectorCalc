@@ -1,6 +1,7 @@
 type Document = {
   vector: number[];
   vectorMag: number;
+  metadata?: any;
 };
 
 function magnitude(vector: number[]): number {
@@ -20,12 +21,12 @@ function similarityScores(
   documents: Document[],
   queryVector: number[],
   queryMagnitude: number
-): [Document, number][] {
+): [Document, number, any][] {
   return documents.map((doc) => {
     const dotProduct: number = doc.vector.reduce((sum, val, i) => sum + val * queryVector[i], 0);
     let score: number = cosineSimilarity(dotProduct, doc.vectorMag, queryMagnitude);
     score = normalize(score);
-    return [doc, score];
+    return [doc, score, doc.metadata];
   });
 }
 
