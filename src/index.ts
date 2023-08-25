@@ -1,6 +1,7 @@
 type Document = {
-  vector: number[];
-  vectorMag: number;
+  id?: string;
+  vector?: number[];
+  vectorMag?: number;
   metadata?: any;
 };
 
@@ -23,11 +24,11 @@ function similarityScores(
     queryMagnitude: number,
     topN: number
   ): [Document, number, any][] {
-    const scores: [Document, number, any][] = documents.map((doc) => {
+    const scores: any[] = documents.map((doc) => {
       const dotProduct: number = doc.vector.reduce((sum, val, i) => sum + val * queryVector[i], 0);
       let score: number = cosineSimilarity(dotProduct, doc.vectorMag, queryMagnitude);
       score = normalize(score);
-      return [doc, score, doc.metadata];
+      return [doc, score];
     });
   
     scores.sort((a, b) => b[1] - a[1]);

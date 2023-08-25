@@ -49,7 +49,6 @@ describe('VectorCalc Library Tests', () => {
     ];
 
     scores.forEach(([doc, score], index) => {
-      console.log(`Expected: ${expectedScores[index][1]}, Received: ${score}`);
       expect(doc).toEqual(expectedScores[index][0]);
       expect(score).toBeCloseTo(expectedScores[index][1], 4);
     });
