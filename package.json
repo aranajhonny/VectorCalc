@@ -7,7 +7,7 @@
     "dev": "tsc --watch",
     "test": "jest --useStderr",
     "lint": "eslint --ext .js,.ts src/",
-    "prepublish": "npm run build",
+    "prepublish": "npm run build && npm run test",
     "format": "prettier --ignore-path .gitignore --write \"src/*.+(js|ts|json)\""
   },
   "dependencies": {
