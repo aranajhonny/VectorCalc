@@ -1,6 +1,6 @@
 {
   "name": "vectorcalc",
-  "version": "1.0.9",
+  "version": "1.1.0",
   "description": "lightweight JavaScript library for calculating vector magnitudes.",
   "scripts": {
     "build": "rm -rf lib/ && tsc && tsc",
@@ -9,6 +9,10 @@
     "lint": "eslint --ext .js,.ts src/",
     "prepublish": "npm run build && npm run test",
     "format": "prettier --ignore-path .gitignore --write \"src/*.+(js|ts|json)\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aranajhonny/vectorcalc.git"
   },
   "dependencies": {
     "deep-equal": "^1.0.1",
